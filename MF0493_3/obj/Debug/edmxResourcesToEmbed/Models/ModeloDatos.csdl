@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MF0493Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="nif" />
+    </Key>
+    <Property Name="nif" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ff" Type="DateTime" Precision="3" />
+    <Property Name="poblacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="logo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="activa" Type="Boolean" />
+    <Property Name="usr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuario" Relationship="MF0493Model.FK_Empresas_Usuarios" FromRole="Empresa" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="passwd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <Property Name="lastlogin" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Empresas" Relationship="MF0493Model.FK_Empresas_Usuarios" FromRole="Usuario" ToRole="Empresa" />
+  </EntityType>
+  <EntityContainer Name="MF0493Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Empresas" EntityType="Self.Empresa" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_Empresas_Usuarios" Association="MF0493Model.FK_Empresas_Usuarios">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Empresa" EntitySet="Empresas" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Empresas_Usuarios">
+    <End Type="MF0493Model.Usuario" Role="Usuario" Multiplicity="0..1" />
+    <End Type="MF0493Model.Empresa" Role="Empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="usr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

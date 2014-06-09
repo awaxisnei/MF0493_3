@@ -1,0 +1,10 @@
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\bin\MF0493_3.dll.config
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\bin\MF0493_3.dll
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\bin\MF0493_3.pdb
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\bin\EntityFramework.dll
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\bin\EntityFramework.SqlServer.dll
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\bin\EntityFramework.xml
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\bin\EntityFramework.SqlServer.xml
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\obj\Debug\MF0493_3.dll
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\obj\Debug\MF0493_3.pdb
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_3\obj\Debug\MF0493_3.csprojResolveAssemblyReference.cache

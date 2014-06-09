@@ -1,0 +1,5 @@
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_03Test\bin\Debug\MF0493_03Test.dll
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_03Test\bin\Debug\MF0493_03Test.pdb
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_03Test\obj\Debug\MF0493_03Test.csprojResolveAssemblyReference.cache
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_03Test\obj\Debug\MF0493_03Test.dll
+C:\Users\desweb\Source\Repos\MF0493_3_final\MF0493_03Test\obj\Debug\MF0493_03Test.pdb

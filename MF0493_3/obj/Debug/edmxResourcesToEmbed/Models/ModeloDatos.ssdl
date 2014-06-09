@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MF0493Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MF0493ModelStoreContainer">
+    <EntitySet Name="Empresas" EntityType="MF0493Model.Store.Empresas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="MF0493Model.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Empresas_Usuarios" Association="MF0493Model.Store.FK_Empresas_Usuarios">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Empresa" EntitySet="Empresas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="nif" />
+    </Key>
+    <Property Name="nif" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="80" />
+    <Property Name="email" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="ff" Type="datetime" Nullable="true" />
+    <Property Name="poblacion" Type="varchar" Nullable="true" MaxLength="30" />
+    <Property Name="telefono" Type="varchar" Nullable="true" MaxLength="12" />
+    <Property Name="logo" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="activa" Type="bit" Nullable="true" />
+    <Property Name="usr" Type="varchar" Nullable="true" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="passwd" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="activo" Type="bit" Nullable="false" />
+    <Property Name="lastlogin" Type="datetime" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_Empresas_Usuarios">
+    <End Role="Usuario" Type="MF0493Model.Store.Usuarios" Multiplicity="0..1" />
+    <End Role="Empresa" Type="MF0493Model.Store.Empresas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="usr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
